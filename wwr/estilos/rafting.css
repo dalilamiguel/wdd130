@@ -5,55 +5,170 @@
     --cor-destaque2:#e9c46a;
     --fonte-titulo: "Times New Roman"; "Georgia", serif;
 
-}
-header {
-    background-color: var(--cor-primaria);
-    color: var(--cor-destaque2);
-}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    font-family: var(--font-body);
-    color: var(--cor-destaque2);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Cor de fundo para destacar os blocos */
 }
-header, main, footer {
-    width: 840px;
+
+/* --- Layout do Cabeçalho (Header) --- */
+header {
+    background-color: #2e8b57; /* Verde da sua imagem */
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between; /* Logo na esquerda, Nav na direita */
+    align-items: center;
+}
+
+header img {
+    max-height: 50px; /* Ajuste para o tamanho da sua logo */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: bold;
+}
+
+/* --- SOLUÇÃO: Enquadrando a Segunda Imagem Grande --- */
+#hero-section {
+    padding: 2rem;
+    background-color: white;
+    text-align: center; /* Centraliza o título */
+}
+
+#hero-section h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Esta classe resolve o problema da imagem desformatada */
+.enquadrada {
+    display: block;
+    max-width: 100%;     /* Impede que a imagem passe da largura da seção */
+    height: auto;        /* Mantém a proporção da imagem */
+    margin: 0 auto;     /* Centraliza a imagem na página */
+    border: 5px solid #fff; /* Opcional: borda branca para estilo */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Opcional: sombra leve */
+}
+
+/* --- Seção da História --- */
+#historia {
+    padding: 2rem;
+    background-color: #e9e9e9; /* Cor de fundo diferente */
+    text-align: center;
+}
+
+#historia p {
+    max-width: 800px; /* Limita a largura do texto para leitura */
     margin: 0 auto;
 }
-h1, h2 {
-    font-family: var(--fonte-titulo);
-    color: var(--cor-primaria);
+
+/* --- Seção de Aventuras (As 5 imagens) --- */
+#aventuras {
+    padding: 2rem;
     text-align: center;
 }
-nav, p, section, article {
-    margin: 16px;
-    padding: 8px;
+
+#aventuras h2 {
+    margin-bottom: 1.5rem;
 }
-.redes-sociais a {
-    text-decoration: nome;
+
+/* Layout Flexbox para as 5 imagens */
+#aventuras .aventura-container {
+    display: flex;
+    justify-content: space-around; /* Espaçamento igual entre as imagens */
+    flex-wrap: wrap; /* Permite quebrar linha se a tela for pequena */
+    gap: 15px;
 }
-.hero {
-    position: relative;
+
+figure {
+    margin: 0;
+    flex: 1 1 18%; /* Faz as 5 imagens dividirem o espaço igualmente */
+    text-align: center;
 }
-.hero img{
-    display: block;
-    width: 100%;
+
+figure img {
+    width: 100%; /* Imagem ocupa todo o espaço do figure */
     height: auto;
 }
-h1 {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 16px;
-    text-align: center;
-    opacity: 0.7;
-    background-color: var(--cor-destaque1);
-    color: #fff; / texto branco - certifique-se de que haja contraste suficiente com a cor de fundo*/;
+
+figcaption {
+    font-size: 0.9rem;
+    margin-top: 5px;
 }
-.hero article img{
-    float: right;
-    width: 125%;
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
+
+.galeria-aventuras {
+    display: flex;
+    justify-content: space-between; /* Espalha as 5 imagens */
+    gap: 10px;
+    padding: 20px;
+}
+
+.galeria-aventuras figure {
+    flex: 1; /* Cada imagem ocupa o mesmo espaço */
+    text-align: center;
+}
+
+.galeria-aventuras figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Opcional: bordas arredondadas */
+}
+
+/* --- Rodapé com Redes Sociais --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.redes-sociais {
+    margin-bottom: 10px;
+}
+
+.redes-sociais a img {
+    width: 30px; /* Tamanho dos ícones */
+    margin: 0 10px;
+}
+
+.sobre-container {
+    display: flex;         /* Ativa o alinhamento lado a lado */
+    align-items: center;   /* Centraliza o texto e a imagem verticalmente */
+    gap: 30px;             /* Espaço entre o texto e a imagem */
+    padding: 20px;
+}
+
+/* Garante que o texto ocupe o espaço disponível */
+.sobre-container p {
+    flex: 1;               /* Faz o texto esticar */
+}
+
+/* Ajusta o tamanho da imagem */
+.sobre-container img {
+    width: 200px;          /* Ajuste o tamanho conforme preferir */
+    height: auto;
+}
+
+/* Centraliza o título acima do container */
+#sobre-nos h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
